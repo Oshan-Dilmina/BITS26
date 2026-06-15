@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Simple Login System</title>
+</head>
+<body>
+    <h1>Login</h1>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+                {% for category, message in messages %}
+                    <div class="error">{{ message }}</div>
+                {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit" class="">Login</button>
+    </form>
+</body>
+</html>

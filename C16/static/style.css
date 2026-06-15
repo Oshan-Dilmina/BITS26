@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+button {
+    background-color : rgb(18, 80, 250);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border:none;
+    text-decoration: none;
+    
+}
+
+input {
+    background-color : rgb(18, 80, 250);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border:none;
+    text-decoration: none;
+}
+
+.error {
+    color:red;
+}
