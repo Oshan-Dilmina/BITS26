@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, Blueprint, request, url_for, flash, session
 import os
 from dotenv import load_dotenv
-from werkzeug.security import check_password_hash
+import hashlib
 
 print("Username is 'username'")
 print("Password is 'password'")
@@ -25,7 +25,11 @@ def login():
         username = os.getenv('USERNAME')
         password = os.getenv('HASHED_PASSWORD')
 
-        if usernameinput == username and check_password_hash(password, passwordinput):
+        salt ="salty"
+        saltedinput = salt + passwordinput
+        inputhash = hashlib.sha256(saltedinput.encode('utf-8')).hexdigest()
+
+        if usernameinput == username and inputhash == password:
             session['name'] = username
             return redirect(url_for('index'))
         
