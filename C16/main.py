@@ -3,8 +3,8 @@ import os
 from dotenv import load_dotenv
 import hashlib
 
-print("Username is 'username'")
-print("Password is 'password'")
+print("Username is 'SuperUser'")
+print("Password is 'SuperUser123'")
 
 app = Flask(__name__)
 auth_bp = Blueprint('auth', __name__)
